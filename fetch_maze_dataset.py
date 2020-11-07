@@ -3,6 +3,7 @@
 import time
 import os
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 
 """ This script is downloading generated maze from mazegenerator website using
 selenium"""
@@ -17,8 +18,9 @@ if __name__ == "__main__":
         print("Creation of directory: ", dataset_dir)
         os.mkdir(dataset_dir)
 
-    # set download path to chosen directory 
-    """ Note: selenium only works with absolute path, not relative path"""
+    # set download path to dataset directory so that download are automatically
+    # located in that file
+    #  Note: selenium only works with absolute path, not relative path
     absolute_dataset_path = os.path.dirname(os.path.abspath(__file__)) + "\\" + dataset_dir 
     options = webdriver.ChromeOptions()
     prefs = {'download.default_directory' : absolute_dataset_path}
@@ -26,12 +28,17 @@ if __name__ == "__main__":
     driver = webdriver.Chrome(chrome_options = options) # initializing chrome as web browser
     driver.get(url) # opening the website
 
+
     # download the maze into the directory
-    """ Note: we don't need to specify the path where the maze get downloaded
-    because we already set the download path to the dataset path"""
     for i in range(num_maze):
         generate_button = driver.find_element_by_id("GenerateButton") # find generate button
         generate_button.click()
+
+        # select file format as png
+        file_dropdown = Select(driver.find_element_by_id("FileFormatSelectorList"))
+        file_dropdown.select_by_visible_text("PNG")
+        
+        # download the maze
         download_button = driver.find_element_by_id("DownloadFileButton")
         download_button.click()
 

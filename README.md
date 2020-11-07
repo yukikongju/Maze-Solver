@@ -44,9 +44,11 @@ website http://www.mazegenerator.net/ to generate my dataset. However, I still
 have to find a way to quantify how good the maze generated is ie the metric
 I'll use to evaluate the "goodness" of the generated maze.
 
-Step #1: Create the dataset by fetching the generated maze from http://www.mazegenerator.net/
+- [x] Step #1: Create the dataset by fetching the generated maze from http://www.mazegenerator.net/
 
 I'll use selenium, a python's module: https://www.geeksforgeeks.org/how-to-click-a-button-on-webpage-using-selenium/
+
+### More - Use Computer Vision to solve a maze with only its picture
 
 
 ### Sources
