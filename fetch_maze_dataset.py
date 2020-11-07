@@ -17,9 +17,9 @@ if __name__ == "__main__":
         print("Creation of directory: ", dataset_dir)
         os.mkdir(dataset_dir)
 
-    # set download path to chosen directory
+    # set download path to chosen directory 
+    """ Note: selenium only works with absolute path, not relative path"""
     absolute_dataset_path = os.path.dirname(os.path.abspath(__file__)) + "\\" + dataset_dir 
-    #  print(dir_name)
     options = webdriver.ChromeOptions()
     prefs = {'download.default_directory' : absolute_dataset_path}
     options.add_experimental_option('prefs', prefs)
@@ -27,12 +27,15 @@ if __name__ == "__main__":
     driver.get(url) # opening the website
 
     # download the maze into the directory
+    """ Note: we don't need to specify the path where the maze get downloaded
+    because we already set the download path to the dataset path"""
     for i in range(num_maze):
         generate_button = driver.find_element_by_id("GenerateButton") # find generate button
         generate_button.click()
         download_button = driver.find_element_by_id("DownloadFileButton")
         download_button.click()
 
+    """ Note: selenium doesn't allow us to change the filename"""
 
 
 
