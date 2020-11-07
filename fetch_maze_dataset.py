@@ -10,7 +10,7 @@ selenium"""
 
 url = "http://www.mazegenerator.net/" 
 dataset_dir = "maze_dataset" # path to which mazes will be saved into
-num_maze = 10 # number of maze we want to generate
+num_maze = 5 # number of maze we want to generate
 
 if __name__ == "__main__":
     # create path if it doesnt exist
@@ -18,8 +18,7 @@ if __name__ == "__main__":
         print("Creation of directory: ", dataset_dir)
         os.mkdir(dataset_dir)
 
-    # set download path to dataset directory so that download are automatically
-    # located in that file
+    # automatically download file in dataset directory instead of default 
     #  Note: selenium only works with absolute path, not relative path
     absolute_dataset_path = os.path.dirname(os.path.abspath(__file__)) + "\\" + dataset_dir 
     options = webdriver.ChromeOptions()
@@ -27,7 +26,6 @@ if __name__ == "__main__":
     options.add_experimental_option('prefs', prefs)
     driver = webdriver.Chrome(chrome_options = options) # initializing chrome as web browser
     driver.get(url) # opening the website
-
 
     # download the maze into the directory
     for i in range(num_maze):
@@ -38,14 +36,16 @@ if __name__ == "__main__":
         file_dropdown = Select(driver.find_element_by_id("FileFormatSelectorList"))
         file_dropdown.select_by_visible_text("PNG")
         
-        # download the maze
+        # download empty maze
         download_button = driver.find_element_by_id("DownloadFileButton")
         download_button.click()
 
-    """ Note: selenium doesn't allow us to change the filename"""
+        # download maze solution
+        file_dropdown.select_by_visible_text("PNG (with solution)")
+        download_button.click()
 
-
-
-
+        """ Note: selenium doesn't allow us to change the filename, so we find
+        the latest file downloaded by their download time. However, we don't
+        want to sort the file everytime we download a maze"""
 
 
