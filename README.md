@@ -27,9 +27,11 @@ link to the maze.
 We know when to end the algorithm when all nodes are visited ie when the stack
 is empty and there is no more neighbor left to explore
 
+#### Step #2: Add a GUI
 
+We want to show the maze and how the algorithm works
 
-#### Step #2: Solve the maze by implementing path finding algorithm
+#### Step #3: Solve the maze by implementing path finding algorithm
 
 Algorithms to implement:
 
@@ -37,10 +39,13 @@ Algorithms to implement:
 - [ ] Ford-Fulkerson
 - [ ] Using Linear Programming and connectivity
 - [ ] BFS
+- [ ] DFS
+- [ ] Backtracking
 - [ ] Floyd-Warshall
 - [ ] A* Search
 
 More: Add a quick description on how the algorithm works?
+
 
 
 ### More - Solving a Maze with Reinforcement Learning
@@ -64,3 +69,5 @@ I'll use selenium, a python's module: https://www.geeksforgeeks.org/how-to-click
 ### Sources
 
 - https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_backtracker
+- http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html
+- https://github.com/jostbr/pymaze
