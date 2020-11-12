@@ -31,6 +31,16 @@ is empty and there is no more neighbor left to explore
 
 #### Step #2: Solve the maze by implementing path finding algorithm
 
+Algorithms to implement:
+
+- [ ] Dijkstra
+- [ ] Ford-Fulkerson
+- [ ] Using Linear Programming and connectivity
+- [ ] BFS
+- [ ] Floyd-Warshall
+- [ ] A* Search
+
+More: Add a quick description on how the algorithm works?
 
 
 ### More - Solving a Maze with Reinforcement Learning
