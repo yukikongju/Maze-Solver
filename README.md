@@ -149,13 +149,21 @@ Then, we use edge detection [to complete]
 ### Maze generation inspiration
 * https://en.wikipedia.org/wiki/Maze_generation_algorithm
 * https://github.com/jostbr/pymaze
+* https://github.com/jsmolka/maze
+* https://github.com/nas-programmer/maze-generator
 * https://www.youtube.com/watch?v=Y37-gB83HKE
+
+### MVC examples
+* https://codereview.stackexchange.com/questions/173872/pygame-flappy-bird-clone-object-oriented
 
 ### Path Finding Algorithm
 * https://en.wikipedia.org/wiki/Pathfinding
 
 ### Writing a proper README.md
 * https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project
+
+### Using Ipyiwidgets with matplotlib
+* https://kapernikov.com/ipywidgets-with-matplotlib/
 
 
 
